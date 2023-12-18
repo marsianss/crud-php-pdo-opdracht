@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Auto's</title>
+    <title>Auto's - Gesorteerd op Prijs (Oplopend)</title>
 </head>
 <body>
 
 <h2>De vijf duurste auto's ter wereld!</h2>
+
+<!-- Knop om naar het formulier te gaan -->
+<a href="create.php">Voeg een nieuwe auto toe</a>
 
 <table border="1">
     <tr>
@@ -27,7 +30,7 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Query om auto's op te halen, gesorteerd op prijs (Oplopend)
-        $sql = "SELECT * FROM Car ORDER BY Prijs DESC";
+        $sql = "SELECT * FROM Car ORDER BY Prijs ASC";
         $stmt = $conn->query($sql);
 
         // Check of er resultaten zijn
